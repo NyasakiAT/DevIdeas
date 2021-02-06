@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Projects";
+}
+@model DevIdeas.Models.ProjectsViewModel
+
+<h1>@ViewData["Title"]</h1>
+
+
+<div class="grid">
+    @{
+
+        <div class="row row-cols-1 row-cols-md-2">
+            @foreach (var f in Model.DbEntries)
+            {
+                <div class="col-s">
+                    <div class="card h-100" style="width: 100%; margin:10px">
+
+                        <div class="card-body">
+                            <h5 class="card-title">@f.Title</h5>
+                            <p class="card-text">@f.Description</p>
+
+                        </div>
+                        <div class="card-footer">
+                            @foreach (var item in f.Tags)
+                            {
+                            <a class="card-link">#@item</a>
+                            }
+                            
+                        </div>
+                    </div>
+                </div>
+                @*<div class="cell">
+                        <h5>@Model.Feeds[counter].Title.Text</h5>
+                        <p>@Model.Feeds[counter].Summary.Text</p>
+                        <a href="@Model.Feeds[counter].Links[0].Uri">Read More</a>
+                    </div>*@
+            }
+        </div>
+
+    }
+</div>

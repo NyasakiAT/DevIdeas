@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model DevIdeas.Models.FormModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <form action="Api/" method="post">
+        <p>Title</p>
+        <input asp-for="Title" type="text" data-role="input" class="">
+
+        <p>Description</p>
+        <textarea  asp-for="Description" data-role="textarea"></textarea>
+
+        <p>Tags</p>
+        <input asp-for="Tags" type="text" data-role="taginput" data-tag-trigger="Space">
+
+        <button>Submit</button>
+    </form>
+
+</div>
